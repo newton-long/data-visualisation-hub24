@@ -1,50 +1,191 @@
 """
-Controls the database, and it's relation with the front-end (js).
-Store the data here.
+Interactive web application, for data visualisations.
+Single web page -> can specify what visualisations the user is looking for.
+Data provided is stored in SQL Lite database for transportable use.
 """
-
+import base64
 import sqlite3
-import pandas as pd
-import plotly.express as px
+from io import StringIO
+
+import dash
 import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
-from bubble_plot.bubble_plot import bubble_plot
+from dash import Dash, dcc, html, Output, Input, callback
+import dash_bootstrap_components as dbc
+import plotly.express as px
+import pandas as pd
 
-# There are 3 main data sets to be uploaded...
-# 1) income by age
-# 2) income by state (geographical view)
-# 3) Benchmark based on ROI
+# Create instance of dash component with VAPOR aesthetic
+app = Dash(__name__, external_stylesheets=[dbc.themes.LUX])
 
-# csvFilePath = 'Data/2021 Male Incomes Across Age Groups.csv'
-#
-# rowsToRead = 17
-# colsToRead = 11
-# df = pd.read_csv(csvFilePath, nrows=rowsToRead, usecols=range(colsToRead))
-# # ADD OTHER 2 DATA FRAMES... BUT RN WE WORK WITH JUST ONE
-#
-# # Connect the data frame to sql lite
-# con = sqlite3.connect('age_income.db')
-# tableName = 'age_income_table'
-#
-# df.to_sql(tableName, con, index=False, if_exists='replace')
-#
-# query = "SELECT * FROM age_income_table"
-# # Extract data from the data base
-# data = pd.read_sql_query(query, con)
-# # Close after extracting data from the database
-# con.close()
+# Layout -> constructed from ROWS (row by row)
+app.layout = dbc.Container(
+    [
+        # Leading row
+        dbc.Row(
+            # Put a col in
+            dbc.Col(
+                html.H1("Data Visualisation Tool", className='text-center')
+            ),
+        ),
+        # Row containing the radio buttons
+        dbc.Row(
+            [
+                dbc.Col(
+                    # Add a Divider to aggregate components together
+                    html.Div([
+                        html.P("Select output:"),
+                        dcc.RadioItems(
+                            id='spec-radio',
+                            options=[
+                                {'label': ' Income Vs Age', 'value': 'Income vs age data for bubble '
+                                                                     'chart output.'},
+                                {'label': ' Advisor Performance', 'value': 'Advisor performance data.'},
+                                {'label': ' Geographical Representation', 'value': 'Postcode and income '
+                                                                                   'data.'},
+                            ],
+                            value='Please select an output.',
+                        ),
+                    ]),
+                    className='mb-4'
+                ),
+            ]
+        ),
+        # Row that outputs the selected output message
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.Div(id='output-message')
+                ),
+            ],
+            className="mb-4",
+        ),
+        # Row for the upload button
+        dbc.Row(
+            [
+                dbc.Col(
+                    dcc.Upload(
+                        id='upload-data',
+                        children=html.Button('Upload Data', style={'width': '100%',
+                                                                   'display': 'inline-block'}),
+                        multiple=False
+                    ),
+                    className='mb-4'
+                ),
+                dbc.Col(
+                    dcc.Loading(
+                        id='loading',
+                        type='circle',
+                        children=[html.Div(id='loading-output')],
+                    )
+                ),
+            ]
+        ),
+        dbc.Row(
+            [
+                dbc.Col(
+                    dcc.Graph(id='visualisation')
+                ),
+            ]
+        ),
+    ],
+    fluid=True,
+)
 
-sns.set_style("darkgrid")
-dff = pd.read_csv("Data/Incomes vs Age.csv")
-bubble_plot(dff, x='Age Range', y='3500 or more')
-plt.show()
 
-# xValues = data.iloc[1:rowsToRead - 2, 0].values
-# yValues = data.iloc[0, 1:colsToRead - 2].values
-# # Extracts the actual population values in array form...
-# values = data.iloc[1:rowsToRead - 2, 1:colsToRead - 2].values
-
+# Helper functions -> returns dataframe...
+def get_uploaded_data():
+    db_connection = sqlite3.connect('uploaded_data.db')
+    query = "SELECT * FROM uploaded_data_table"
+    df = pd.read_sql(query, db_connection)
+    db_connection.close()
+    return df
 
 
+def update_graph(selected_radio):
+    data = get_uploaded_data()
+    if selected_radio == 'bubble':
+        graph = create_bubble_plot(df)
+    elif selected_radio == 'perf':
+        graph = create_performance_graph(df)
+    elif selected_radio == 'geo':
+        graph = create_geographical_graph(df)
+    else:
+        graph = create_default_scatter_plot(df)
 
+    return graph
+
+
+def create_bubble_plot(df):
+    fig = {
+        'data': [
+            {
+                'x': df['Income'],
+                'y': df['Age'],
+                'mode': 'markers',
+                'type': 'scatter',
+                'marker': {
+                    'size': df['SomeNumericVariable'],  # Adjust size based on a numeric variable
+                    'color': df['SomeColorVariable'],  # Use a color variable for shading
+                    'colorscale': 'Viridis',  # Choose a color scale (e.g., Viridis)
+                    'colorbar': {'title': 'Colorbar Title'}  # Add a colorbar with a title
+                }
+            }
+        ],
+        'layout': {
+            'title': 'Income Vs Age Bubble Plot',
+            'xaxis': {'title': 'Income'},
+            'yaxis': {'title': 'Age'}
+        }
+    }
+    return fig
+
+
+def create_performance_graph(df):
+    pass
+
+
+def create_geographical_graph(df):
+    pass
+
+
+def create_default_scatter_plot(df):
+    fig = {
+        'data': [
+            {'x': [0], 'y': [0], 'mode': 'markers', 'type': 'scatter'}
+        ],
+        'layout': {'title': 'Default Scatter Plot'}
+    }
+    return fig
+
+
+@app.callback(
+    Output('output-message', 'children'),
+    Input('spec-radio', 'value'),
+)
+def update_output(specified_output):
+    return f'Please upload the following: {specified_output}'
+
+
+@app.callback(
+    Output('loading', 'children'),
+    [Input('upload-data', 'contents')],
+    prevent_initial_call=True
+)
+def store_and_display_data(contents):
+    if contents is not None:
+        content_type, content_string = contents.split(',')
+        decoded_content = base64.b64decode(content_string)
+        df = pd.read_csv(StringIO(decoded_content.decode('utf-8')))
+
+        db_connection = sqlite3.connect('uploaded_data.db')
+        df.to_sql('uploaded_data_table', db_connection, if_exists='replace', index=False)
+        db_connection.close()
+
+        return f'Data uploaded and stored. Preview: {", ".join(df.columns)}'
+    else:
+        return 'No data uploaded.', None
+
+
+if __name__ == "__main__":
+    app.run_server(debug=True)
