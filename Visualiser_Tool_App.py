@@ -16,6 +16,7 @@ navbar = dbc.NavbarSimple(
     children=[
         dbc.NavItem(dbc.NavLink("Home", href="/")),
         dbc.NavItem(dbc.NavLink("Performance", href="/performance")),
+        dbc.NavItem(dbc.NavLink("Sales", href="/sales")),
     ],
     sticky="top",
 )

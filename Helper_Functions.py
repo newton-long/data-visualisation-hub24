@@ -191,6 +191,18 @@ def default_graph():
     return fig
 
 
+def get_perf_data():
+    db_connection = sqlite3.connect('performance_data.db')
+    query = "SELECT * FROM performance_data_table"
+    df = pd.read_sql(query, db_connection)
+    db_connection.close()
+    return df
+
+
+def performance_line_graph(df):
+    pass
+
+
 def parse_contents(contents, filename, date):
     content_type, content_string = contents.split(',')
 
