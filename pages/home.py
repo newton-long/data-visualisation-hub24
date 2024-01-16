@@ -158,7 +158,7 @@ def update_output(selected_radio):
         elif selected_radio == "Post code & Taxable Income":
             graph = create_high_tax_geo_bubble_plot(data)
         elif selected_radio == "Hexabin version of above":
-            graph = dummy_hexabin_plot()
+            graph = create_hexabin_graph(data)
         return "Data uploaded 😊!", graph
     # If no data has been uploaded then let the user know
     else:

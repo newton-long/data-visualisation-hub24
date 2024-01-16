@@ -10,6 +10,8 @@ import folium as fl
 from io import BytesIO
 import plotly.express as px
 import plotly.figure_factory as ff
+import random
+from datetime import timedelta
 
 """
 Helper functions for visualiser tool.
@@ -23,7 +25,7 @@ def get_uploaded_data():
 
     :return: data frame from the uploaded data.
     """
-    db_connection = sqlite3.connect('uploaded_data.db')
+    db_connection = sqlite3.connect('../uploaded_data.db')
     query = "SELECT * FROM uploaded_data_table"
     df = pd.read_sql(query, db_connection)
     db_connection.close()
@@ -72,7 +74,7 @@ def convert_coordinates(coord_str):
     :return:
     """
     degrees, minutes, seconds = map(float, coord_str.split(':'))
-    decimal_degrees = degrees + minutes/60 + seconds/3600
+    decimal_degrees = degrees + minutes / 60 + seconds / 3600
     return decimal_degrees
 
 
@@ -108,59 +110,79 @@ def create_hexabin_graph(df):
     """
     Hexabin tryout -> something funky to mix it up against the bubble plot.
     :param df: Data to be used for the hexabin plot.
-    :return: hexabin plot.
+    :return: hexabin plot with individual data points.
     """
-    fig = ff.create_hexbin_mapbox(
+    # Create hexbin plot
+    hexbin_fig = ff.create_hexbin_mapbox(
         data_frame=df,
         lat="Latitude",
         lon="Longitude",
         nx_hexagon=40,
-        opacity=0.6,
-        labels={
-            "color": "Highest Average Taxable Income",
-        },
-        # range_color=(df["Highest Average Taxable Income"].min(), df["Highest Average Taxable Income"].max()),
-        # Set the range of color values
-        mapbox_style="carto-positron",  # Experiment with different styles
-        center=dict(lat=-25.2744, lon=133.7751),  # Centered over Australia
-        zoom=3,  # Adjust the zoom level
+        opacity=0.7,
+        labels={"color": "Income"},
+        color_continuous_scale="Viridis",
+        mapbox_style="carto-positron",
+        center=dict(lat=-25.2744, lon=133.7751),
+        zoom=3,
     )
 
-    fig.update_layout(
+    # Create scatter plot for individual data points
+    scatter_fig = go.Figure(go.Scattermapbox(
+        lat=df["Latitude"],
+        lon=df["Longitude"],
+        mode='markers',
+        marker=dict(
+            size=8,
+            color=df["Income"],
+            colorscale="Viridis",
+            opacity=0.7,
+            colorbar=dict(title="Income"),
+        ),
+        hoverinfo='text',
+        hovertext=df[["Latitude", "Longitude", "Income"]].astype(str).agg('<br>'.join, axis=1),
+    ))
+
+    # Combine the hexbin plot and scatter plot
+    hexbin_fig.add_trace(scatter_fig.data[0])
+
+    hexbin_fig.update_layout(
         margin=dict(l=0, r=0, t=0, b=0),
-        height=800,  # Adjust the height
-        width=1900,  # Adjust the width
+        height=800,
+        width=1900,
     )
 
-    return fig
+    return hexbin_fig
 
 
 # Proof of concept something more aesthetic... than the original data
-def dummy_hexabin_plot():
-    px.set_mapbox_access_token(open(".mapbox_token").read())
-    np.random.seed(0)
+def dummy_hexabin_data():
+    # Set seed for reproducibility
+    np.random.seed(42)
 
-    N = 500
-    n_frames = 12
-    lat = np.concatenate([
-        np.random.randn(N) * 0.5 + np.cos(i / n_frames * 2 * np.pi) + 10
-        for i in range(n_frames)
-    ])
-    lon = np.concatenate([
-        np.random.randn(N) * 0.5 + np.sin(i / n_frames * 2 * np.pi)
-        for i in range(n_frames)
-    ])
-    frame = np.concatenate([
-        np.ones(N, int) * i for i in range(n_frames)
-    ])
+    # Number of data points
+    n_points = 1000
 
-    fig = ff.create_hexbin_mapbox(
-        lat=lat, lon=lon, nx_hexagon=15, animation_frame=frame,
-        color_continuous_scale="Cividis", labels={"color": "Point Count", "frame": "Period"},
-        opacity=0.5, min_count=1,
-        show_original_data=True, original_data_marker=dict(opacity=0.6, size=4, color="deeppink")
-    )
-    return fig
+    # Coordinates for Sydney, Australia
+    location_lat = -33.8688
+    location_lon = 151.2093
+
+    # Generate random data around the specified location
+    lat = np.random.normal(loc=location_lat, scale=0.05, size=n_points)
+    lon = np.random.normal(loc=location_lon, scale=0.05, size=n_points)
+    income = np.random.normal(loc=50000, scale=10000, size=n_points)  # Example: income
+
+    # Create a DataFrame
+    df = pd.DataFrame({
+        'Latitude': lat,
+        'Longitude': lon,
+        'Income': income
+    })
+
+    # Save the data as a CSV file
+    df.to_csv('Data/dummy_data_sydney.csv', index=False)
+
+
+# dummy_hexabin_data()
 
 
 def create_default_scatter_plot(df):
@@ -200,7 +222,44 @@ def get_perf_data():
 
 
 def performance_line_graph(df):
+    """
+    This function doesn't need to access the database as it is only needing universal sales information,
+    and guidance for the advisors that want to see it.
+    This is to give proof of concept on visualisations that may be useful for the sales process.
+    :param df:
+    :return:
+    """
     pass
+
+
+# Fake data generator for the sales demonstration
+def generate_sample_sales_data(file_path='sample_sales_data.xlsx', num_rows=30):
+    """
+    Generate sample sales data and save it to an Excel file.
+
+    Parameters:
+    - file_path (str): Path to the Excel file where the data will be saved.
+    - num_rows (int): Number of rows (entries) to generate in the dataset.
+
+    Returns:
+    - None
+    """
+    data = {
+        'Date': pd.date_range(start='2022-01-01', periods=num_rows, freq='D'),
+        'Product': [f'Product_{random.randint(1, 5)}' for _ in range(num_rows)],
+        'Category': [f'Category_{random.choice(["A", "B", "C"])}' for _ in range(num_rows)],
+        'Sales': [random.randint(100, 500) for _ in range(num_rows)],
+    }
+
+    sales_df = pd.DataFrame(data)
+
+    # Save the data to an Excel file
+    sales_df.to_excel(file_path, index=False)
+
+    print(f"Sample sales data saved to '{file_path}'")
+
+
+# generate_sample_sales_data(file_path='custom_sales_data.xlsx', num_rows=50)
 
 
 def parse_contents(contents, filename, date):
@@ -296,3 +355,69 @@ def populate_longitude_latitude(target, source, output):
 # populate_longitude_latitude("Data/Highest Average Taxable Income.csv",
 #                             "Data/australian_meta_data.csv",
 #                             "Data/Populated Highest Average Taxable Income.csv")
+
+# Below is some self-made advisor performance data, to show proof of concept, since actual data given was impossible
+# to extrapolate from
+def generate_and_save_sample_data(num_entries=365, output_csv='sample_data.csv'):
+    """
+    Generate sample data with dates, advisor IDs, and returns, and save it to a CSV file.
+
+    Parameters:
+    - num_entries (int): Number of entries to generate.
+    - output_csv (str): File path to save the CSV file.
+
+    Returns:
+    - pd.DataFrame: DataFrame with columns for Date, AdvisorID, and Returns.
+    """
+    start_date = pd.to_datetime('2022-01-01')
+    end_date = start_date + timedelta(days=num_entries - 1)
+
+    # Generate random advisor IDs
+    advisor_ids = [random.randint(1, 5) for _ in range(num_entries)]  # Assume 5 advisors
+
+    # Generate random returns in dollars
+    returns = [random.uniform(-1000, 1000) for _ in range(num_entries)]
+
+    # Create DataFrame
+    data = {'Date': pd.date_range(start=start_date, end=end_date, freq='D'),
+            'AdvisorID': advisor_ids,
+            'Returns': returns}
+    df = pd.DataFrame(data)
+
+    # Save the DataFrame to a CSV file
+    df.to_csv(output_csv, index=False)
+    print(f"Sample data saved to '{output_csv}'")
+
+    return df
+
+
+# # Example usage: generate_and_save_sample_data()
+# sample_data = generate_and_save_sample_data(num_entries=365)
+#
+# # Visualization: Line chart - Returns over time, each advisor has a separate line
+# fig = px.line(sample_data, x='Date', y='Returns', color='AdvisorID',
+#               title='Returns Over Time by AdvisorID')
+# fig.show()
+
+
+def aggregate_market_values_and_save(csv_output_path, excel_input_path):
+    # Read the Excel file into a DataFrame
+    df_excel = pd.read_excel(excel_input_path, "Acct Balances")
+
+    # Group by 'Advisor' and 'Date' and sum the 'Market Value' for each combination
+    df_aggregated = df_excel.groupby(['adviserCode', 'ValueDate'])['MarketValue'].sum().reset_index()
+
+    # Save the aggregated DataFrame to a new CSV file
+    df_aggregated.to_csv(csv_output_path, index=False)
+
+
+# aggregate_market_values_and_save("Data/performance_extract.csv",
+#                                  "Data/2023-11-22 - Sample Data for Visualisations.xlsx")
+
+
+# def advisor_performance_data_extraction():
+#     # Open desired excel sheet
+#     df = pd.read_excel("Data/2023-11-22 - Sample Data for Visualisations.xlsx")
+#     # Loop through each row and sum up the market value of all assets for that one row
+#
+#     # Store that cumulative row into a new csv file...

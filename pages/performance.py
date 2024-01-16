@@ -78,6 +78,20 @@ layout = dbc.Container(
                 ),
             ]
         ),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H3("Advisor Leaderboard")
+                )
+            ]
+        ),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.Div(id="leaderboard", style={'display': 'none'})
+                )
+            ]
+        )
 
     ],
     fluid=True,
@@ -108,7 +122,8 @@ def upload_status(contents):
 
 
 @callback(
-    Output('perf-vis', 'children'),
+    [Output('perf-vis', 'figure'),
+     Output('leaderboard', 'style')],
     Input('button', 'n_clicks'),
     prevent_initial_call=True
 )
@@ -117,6 +132,8 @@ def generate_output(n_clicks):
     # Check if pressed
     if n_clicks is not None and n_clicks > 0:
         return performance_line_graph(data)
+
+
 
 
 
