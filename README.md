@@ -1,6 +1,7 @@
 Data visualisation tool:
 
-*description of purpose and functionality
+Upload CSV files, certain CSV's correspond to certain visualisation outputs.
+namely
 
 
 HOW TO USE: 
