@@ -88,8 +88,8 @@ def create_high_tax_geo_bubble_plot(df):
     fig = px.scatter_mapbox(df,
                             lat='Latitude',
                             lon='Longitude',
-                            size='Highest Average Taxable Income',
-                            color='Highest Average Taxable Income',
+                            size='Average Taxable Income',
+                            color='Average Taxable Income',
                             center=dict(lat=-25.2744, lon=133.7751),
                             zoom=3,
                             mapbox_style="open-street-map")
@@ -223,13 +223,129 @@ def get_perf_data():
 
 def performance_line_graph(df):
     """
-    This function doesn't need to access the database as it is only needing universal sales information,
-    and guidance for the advisors that want to see it.
-    This is to give proof of concept on visualisations that may be useful for the sales process.
-    :param df:
-    :return:
+    This will track the closing balance at the end of each month...
+    The idea is that overtime we can see which account has the most money within it...
+    :param df: Data to be used...
+    :return: Figure that shows the closing balances of different accounts over time...
     """
-    pass
+    # Create a line plot using Plotly Express with separate lines for each Account ID
+    fig = px.line(df, x='EOM', y='ClosingBal', color='AcctId',
+                  title='Closing Balances Over Time by Account ID',
+                  labels={'EOM': 'Date', 'ClosingBal': 'Closing Balance', 'AcctId': 'Account ID'},
+                  line_shape='linear', render_mode='svg')
+
+    # Customize the layout
+    fig.update_layout(
+        xaxis=dict(title='Date'),
+        yaxis=dict(title='Closing Balance'),
+        height=1200,  # Adjust the height as needed
+        width=1700,  # Adjust the width as needed
+        margin=dict(l=50, r=50, t=50, b=50),  # Adjust the margins to provide space around the plot
+    )
+
+    return fig
+
+
+def text_output(df):
+    """
+    This function is to filter through the data given, to be able to distinguish the best
+    performing account and thus which advisor was the best.
+    :param df: the data to shift through.
+    :return: Returns string associated with the best performing account... (COULD BE UPDATED TO SHOW ADVISOR)
+    """
+    # Iterate through each row and obtain the accountId and the corresponding closing balance
+    bestAcc = None
+    value = 0
+    currAcc = None
+    currValue = 0
+    # Iterate through each row of the CSV file
+    for index, row in df.iterrows():
+        # The base case -> set the first account as the "best" as a reference point
+        if bestAcc is None:
+            bestAcc = row['AcctId']
+            value = row['ClosingBal']
+            continue
+        if row['AcctId'] != bestAcc and currAcc is None:
+            # Grab the last entry of the before closing balance
+            value = df.iloc[index - 1]['ClosingBal'] - value
+            # After the first account has been analysed we need to store the next account, ie
+            # there must always be a pair at hand
+            currAcc = row['AcctId']
+            currValue = row['ClosingBal']
+            # Now the next account is set we can con't
+            continue
+        # Below means that we've hit the next section
+        if row['AcctId'] != currAcc:
+            currValue = df.iloc[index - 1]['ClosingBal'] - currValue  # This will store the different
+            # Once value is stored we compare
+            if currValue > value:
+                # If perform better than update the best account values
+                value = currValue
+                bestAcc = df.iloc[index - 1]['AcctId']
+            # Else, we just continue
+            currAcc = row['AcctId']
+            currValue = row['ClosingBal']
+            continue
+        # Check if it is the last entry
+        if index == df.index[-1]:
+            # Update the current value
+            currValue = row['ClosingBal'] - currValue
+            # Now compare with the previous best account values
+            if currValue > value:
+                value = currValue
+                bestAcc = row['AcctId']
+    # It should naturally break out of the for loop
+    # With the best account stored in the variables before...
+
+    return f"1st: {bestAcc} with gain: {value}"
+
+
+def worst_account(df):
+    # Iterate through each row and obtain the accountId and the corresponding closing balance
+    bestAcc = None
+    value = 0
+    currAcc = None
+    currValue = 0
+    # Iterate through each row of the CSV file
+    for index, row in df.iterrows():
+        # The base case -> set the first account as the "best" as a reference point
+        if bestAcc is None:
+            bestAcc = row['AcctId']
+            value = row['ClosingBal']
+            continue
+        if row['AcctId'] != bestAcc and currAcc is None:
+            # Grab the last entry of the before closing balance
+            value = df.iloc[index - 1]['ClosingBal'] - value
+            # After the first account has been analysed we need to store the next account, ie
+            # there must always be a pair at hand
+            currAcc = row['AcctId']
+            currValue = row['ClosingBal']
+            # Now the next account is set we can con't
+            continue
+        # Below means that we've hit the next section
+        if row['AcctId'] != currAcc:
+            currValue = df.iloc[index - 1]['ClosingBal'] - currValue  # This will store the different
+            # Once value is stored we compare
+            if currValue < value:
+                # If perform better than update the best account values
+                value = currValue
+                bestAcc = df.iloc[index - 1]['AcctId']
+            # Else, we just continue
+            currAcc = row['AcctId']
+            currValue = row['ClosingBal']
+            continue
+        # Check if it is the last entry
+        if index == df.index[-1]:
+            # Update the current value
+            currValue = row['ClosingBal'] - currValue
+            # Now compare with the previous best account values
+            if currValue < value:
+                value = currValue
+                bestAcc = row['AcctId']
+    # It should naturally break out of the for loop
+    # With the best account stored in the variables before...
+
+    return f"last: {bestAcc} with gain: {value}"
 
 
 # Fake data generator for the sales demonstration
@@ -391,6 +507,122 @@ def generate_and_save_sample_data(num_entries=365, output_csv='sample_data.csv')
     return df
 
 
+def get_spider_data():
+    """
+    Reaches for 'uploaded_data.db' file and creates a df
+    of all the data.
+
+    :return: data frame from the uploaded data.
+    """
+    db_connection = sqlite3.connect('sales_spider.db')
+    query = "SELECT * FROM sales_data_table"
+    df = pd.read_sql(query, db_connection)
+    db_connection.close()
+    return df
+
+
+# May add in date slider and can see the portfolio change over time
+# Also add the advisor number etc basic implementation, would look really nice actually...
+def sales_spider(df, adviser):
+    """
+    Filters through the data frame, obtains enough information about the asset composition,
+    then return the figure that shows that...
+    :param adviser: The code corresponding to the advisor button that was pressed.
+    :param df: data frame to be filtered with
+    :return: spider graph from the asset composition
+    """
+    # Need to filter and count the data entries, to store the number of specific of one asset there is
+    # And the different type of asset classes... -> build two lists, and dynamically append one by one
+    # Initialize empty lists to store asset classes and their counts
+    asset_classes = []
+    class_counts = []
+
+    filtered = df[df['adviserCode'] == adviser]
+    # Iterate through each row in the 'AssetClass' column
+    for asset_class in filtered['AssetClass']:
+        # Check if the asset class is already in the list
+        if asset_class not in asset_classes:
+            # If not, add it to the list of asset classes
+            asset_classes.append(asset_class)
+            # Count the occurrences of the asset class in the DataFrame and add it to the counts list
+            class_counts.append(filtered[filtered['AssetClass'] == asset_class].shape[0])
+
+    fig = go.Figure(data=go.Scatterpolar(
+        r=class_counts,
+        theta=asset_classes,
+        fill='toself'
+    ))
+
+    return fig
+
+
+def get_advisor_value(data):
+    """
+    Passes in the data and obtains the value of the advisor that is managing this set of data.
+    :param data: The data frame relating to the spider graph.
+    :return: The advisor code for this asset portfolio.
+    """
+    advisor = data['adviserCode'][0]
+
+    return advisor
+
+
+def sales_bar(data, adviser):
+    """
+    This function outputs a bar graph summarising the total market value of the aggregated asset classes.
+    :param adviser: The code corresponding to the advisor button that was pressed.
+    :param data: The data frame associated with the particular advisor.
+    :return: A bar graph that shows us the market value of the asset classes aggregated.
+    """
+    # Initialize empty lists to store asset classes and their aggregated market values
+    asset_classes = []
+    market_values = []
+
+    # Filter the filter
+    filtered = data[data['adviserCode'] == adviser]
+    # Iterate through unique asset classes
+    for asset_class in filtered['AssetClass'].unique():
+        # Filter data for the current asset class
+        filtered_data = filtered[filtered['AssetClass'] == asset_class]
+        # Sum the market values for the current asset class
+        total_market_value = filtered_data['MarketValue'].sum()
+        # Append the asset class and its total market value to the lists
+        asset_classes.append(asset_class)
+        market_values.append(total_market_value)
+
+    # Create the bar graph
+    fig = go.Figure(go.Bar(
+        x=asset_classes,
+        y=market_values
+    ))
+
+    # Customize the layout
+    fig.update_layout(
+        title='Total Market Value by Asset Class',
+        xaxis_title='Asset Class',
+        yaxis_title='Total Market Value',
+        bargap=0.1,  # Gap between bars
+        bargroupgap=0.2,  # Gap between groups of bars
+        xaxis_tickangle=-45  # Rotate x-axis labels for better readability
+    )
+
+    return fig
+
+
+# Possibly write script to filter the original excel sheet, get and save a bunch as each chunk and keep
+# uploading different ones... could be very effective to show case the potential at least
+
+
+def sales_spider_2():
+    fig = go.Figure(data=go.Scatterpolar(
+        r=[4, 3, 2, 5, 1],
+        theta=['c', 'l', 'o', 's', 'e', 'r'],
+        fill='toself'
+    ))
+
+    return fig
+
+
 # # Example usage: generate_and_save_sample_data()
 # sample_data = generate_and_save_sample_data(num_entries=365)
 #
@@ -400,20 +632,18 @@ def generate_and_save_sample_data(num_entries=365, output_csv='sample_data.csv')
 # fig.show()
 
 
-def aggregate_market_values_and_save(csv_output_path, excel_input_path):
+def aggregate_closing_bal_and_save(csv_output_path, excel_input_path):
     # Read the Excel file into a DataFrame
-    df_excel = pd.read_excel(excel_input_path, "Acct Balances")
+    df_excel = pd.read_excel(excel_input_path, "Performance")
 
     # Group by 'Advisor' and 'Date' and sum the 'Market Value' for each combination
-    df_aggregated = df_excel.groupby(['adviserCode', 'ValueDate'])['MarketValue'].sum().reset_index()
+    df_aggregated = df_excel.groupby(['AcctId', 'EOM'])['ClosingBal'].sum().reset_index()
 
     # Save the aggregated DataFrame to a new CSV file
     df_aggregated.to_csv(csv_output_path, index=False)
 
-
-# aggregate_market_values_and_save("Data/performance_extract.csv",
-#                                  "Data/2023-11-22 - Sample Data for Visualisations.xlsx")
-
+# aggregate_closing_bal_and_save("Data/performance_extract.csv",
+#                                "Data/2023-11-22 - Sample Data for Visualisations.xlsx")
 
 # def advisor_performance_data_extraction():
 #     # Open desired excel sheet

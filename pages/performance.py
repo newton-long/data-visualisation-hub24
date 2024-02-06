@@ -9,7 +9,6 @@ from Helper_Functions import *
 
 dash.register_page(__name__)
 
-
 """
 Contains the layout for the performance analytics of advisors. 
 """
@@ -81,18 +80,29 @@ layout = dbc.Container(
         dbc.Row(
             [
                 dbc.Col(
-                    html.H3("Advisor Leaderboard")
+                    html.H3("Most Successful Account ID?")
                 )
             ]
         ),
         dbc.Row(
             [
                 dbc.Col(
-                    html.Div(id="leaderboard", style={'display': 'none'})
+                    # To display the best performing account thus we can track best performing advisor...
+                    html.Div(id="text-output",
+                             children=html.Div("")
+                             )
+                )
+            ]
+        ),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.Div(id="2ndoutput",
+                             children=html.Div("")
+                             )
                 )
             ]
         )
-
     ],
     fluid=True,
 )
@@ -111,7 +121,7 @@ def upload_status(contents):
         # Store into data base with sql lite
         df = pd.read_csv(StringIO(decoded_content.decode('utf-8')))
         # Currently just going to be one singular .db file -> assuming need to upload each time...
-        db_connection = sqlite3.connect('../performance_data.db')
+        db_connection = sqlite3.connect('performance_data.db')
         df.to_sql('performance_data_table', db_connection, if_exists='replace', index=False)
         db_connection.close()
 
@@ -123,18 +133,14 @@ def upload_status(contents):
 
 @callback(
     [Output('perf-vis', 'figure'),
-     Output('leaderboard', 'style')],
+     Output('text-output', 'children'),
+     Output("2ndoutput", 'children')],
     Input('button', 'n_clicks'),
     prevent_initial_call=True
 )
 def generate_output(n_clicks):
     data = get_perf_data()
+    if n_clicks > 0:
+        return performance_line_graph(data), text_output(data), worst_account(data)
     # Check if pressed
-    if n_clicks is not None and n_clicks > 0:
-        return performance_line_graph(data)
-
-
-
-
-
-
+    return None, "", ""
