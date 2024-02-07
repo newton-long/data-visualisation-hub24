@@ -642,6 +642,7 @@ def aggregate_closing_bal_and_save(csv_output_path, excel_input_path):
     # Save the aggregated DataFrame to a new CSV file
     df_aggregated.to_csv(csv_output_path, index=False)
 
+
 # aggregate_closing_bal_and_save("Data/performance_extract.csv",
 #                                "Data/2023-11-22 - Sample Data for Visualisations.xlsx")
 
@@ -651,3 +652,22 @@ def aggregate_closing_bal_and_save(csv_output_path, excel_input_path):
 #     # Loop through each row and sum up the market value of all assets for that one row
 #
 #     # Store that cumulative row into a new csv file...
+
+def create_sales_funnel_chart():
+    data = pd.DataFrame(dict(
+        Pipeline=["Cold Outreach", "Qualified Leads", "Demo Calls Booked", "Closed",
+                  "Cold Outreach", "Qualified Leads", "Demo Calls Booked", "Closed",
+                  "Cold Outreach", "Qualified Leads", "Demo Calls Booked", "Closed",
+                  "Cold Outreach", "Qualified Leads", "Demo Calls Booked", "Closed"],
+        x=[97, 70, 40, 20,
+           60, 40, 20, 5,
+           100, 60, 20, 10,
+           200, 150, 100, 50],
+        Locations=["Brisbane", "Brisbane", "Brisbane", "Brisbane",
+                   "Gold Coast", "Gold Coast", "Gold Coast", "Gold Coast",
+                   "Melbourne", "Melbourne", "Melbourne", "Melbourne",
+                   "Sydney", "Sydney", "Sydney", "Sydney"],
+    ))
+    fig = px.funnel(data, x='x', y='Pipeline', color='Locations')
+
+    return fig

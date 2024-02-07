@@ -17,20 +17,23 @@ layout = dbc.Container(
         ),
         dbc.Row(
             dbc.Col([
-                html.P("* Some sales module / program..."),
-                html.P("C L O S E R Framework"),
-                html.P("C = clarify -> Clarify why the potential costumer has come in, or called in today."),
-                html.P("L = label -> Label the problem that is to be solved precisely."),
-                html.P("O = overview -> Overview their past pains and how they tried to previously solve it."),
-                html.P("S = sell the vacation -> Sell the destination, not the plane ticket."),
-                html.P("E = explain -> Explain away their concerns / objections."),
-                html.P("R = reinforce -> Reinforce their decision, send personalised video etc."),
+                html.P("Sales data for this month:")
             ]),
+        ),
+        dbc.Row(
+            dbc.Col(
+                dcc.Graph(
+                    id='funnel-chart',
+                    figure=create_sales_funnel_chart()
+                        )
+                )
         ),
         dbc.Row(
             [
                 dbc.Col(
-                    html.H2("Featured Visualizations", className='text-center'),
+                    html.H2("Asset Portfolio Visualisations", className='text-center',
+                            style={'padding-top': '20px'}
+                            ),
                     className='mb-4'
                 ),
             ]
@@ -67,15 +70,6 @@ layout = dbc.Container(
                 ),
             ]
         ),
-        # dbc.Row(
-        #     [
-        #         dbc.Col(
-        #             html.Button('Generate Output', id='button', n_clicks=0,
-        #                         className='btn btn-primary',
-        #                         style={'margin-top': '10px', 'border-radius': '8px'})
-        #         )
-        #     ]
-        # ),
         dbc.Row(
             [
                 dbc.Col(

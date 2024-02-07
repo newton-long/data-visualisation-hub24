@@ -17,7 +17,7 @@ navbar = dbc.NavbarSimple(
         dbc.NavItem(dbc.NavLink("Home", href="/")),
         dbc.NavItem(dbc.NavLink("Performance", href="/performance")),
         dbc.NavItem(dbc.NavLink("Sales", href="/sales")),
-        dbc.NavItem(dbc.NavLink("Talk to our AI Chatbot", href="/chatbot"))
+        dbc.NavItem(dbc.NavLink("AI Chatbot & Stock Price Predictor", href="/chatbot"))
     ],
     sticky="top",
 )
