@@ -18,7 +18,7 @@ layout = dbc.Container(
         dbc.Row(
             [
                 dbc.Col(
-                    html.H1("Advisor Performance Tracker", className='text-center'),
+                    html.H1("Investor Performance Tracker", className='text-center'),
                 ),
             ]
         ),

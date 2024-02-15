@@ -1,9 +1,13 @@
 import dash
 from dash import Dash, dcc, html, Output, Input, callback, State, ALL, callback_context
 import dash_bootstrap_components as dbc
+
+import Stock_Price_Predictor
 from Helper_Functions import *
 from io import StringIO
 from openai_function import chatbot
+from datetime import datetime
+from Stock_Price_Predictor import *
 
 dash.register_page(__name__)
 
@@ -81,6 +85,13 @@ layout = dbc.Container(
                 ),
             ]
         ),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.Img(src='/assets/btc-prediction.png', style={'display': 'inline-block'})
+                )
+            ]
+        )
     ]
 )
 
@@ -96,3 +107,17 @@ def update_output(n_clicks, input_text):
         return f'Response: {chatbot(input_text)}'
     else:
         return ''
+
+
+@callback(
+    Output('prediction-vis', 'figure'),
+    [Input('prediction-button', 'n_clicks'),
+     Input('prediction-input', 'value')]
+)
+def show_prediction(n_clicks, value):
+    # Output the prediction graph
+    if n_clicks > 0:
+        return prediction_graph(int(value), Stock_Price_Predictor.get_transition_function(classify_data(obtain_data())),
+                                classify_data(obtain_data()))
+    else:
+        return default_graph()

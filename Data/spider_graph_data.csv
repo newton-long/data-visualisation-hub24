@@ -1,0 +1,297 @@
+PortalID,adviserCode,ValueDate,AcctId,SleeveID,Model,AccountTypeDescription,SecCode,AssetClass,GICS, Price ,Quantity,MarketValue
+19,1201,31/01/2018,11859,1486,Cash,Superfund (Accumulation),MAQ0789AU,Cash,,$0.97,36098,35015.06
+19,1201,31/01/2018,11859,1490,Cash,Superfund (Accumulation),IOF0145AU,Australian Fixed Interest,,$1.07,18591,19892.37
+19,1201,31/01/2018,11865,1555,Cash,Superfund (Accumulation),PER0116AU,Australian Equity,,$2.03,61232,124300.96
+19,1201,31/01/2018,11865,1555,Cash,Superfund (Accumulation),TLS,Australian Equity,Telecommunication Services,$3.67,17571,64485.57
+19,1201,31/01/2018,11865,1557,Equities,Superfund (Accumulation),RGL0002AU,Australian Equity,,$1.75,44076,77133
+19,1201,31/01/2018,11865,1557,Equities,Superfund (Accumulation),PER0439AU,Australian Equity,,$1.50,98296,147444
+19,1201,31/01/2018,11865,1557,Equities,Superfund (Accumulation),RGL0004AU,Australian Equity,,$2.26,36202,81816.52
+19,1201,31/01/2018,11865,1557,Equities,Superfund (Accumulation),PIM0028AU,Australian Equity,,$1.25,117705,147131.25
+19,1201,31/01/2018,11865,1557,Equities,Superfund (Accumulation),OPS7755AU,Australian Equity,,$1.23,122536,150719.28
+19,1201,31/01/2018,11865,1559,Equities,Superfund (Accumulation),MGE0001AU,International Equity,,$2.13,51930,110610.9
+19,1201,31/01/2018,11865,1559,Equities,Superfund (Accumulation),PLA0100AU,International Equity,,$2.80,54596,152868.8
+19,1201,31/01/2018,11865,1559,Equities,Superfund (Accumulation),SCH0030AU,International Equity,,$0.90,194024,174621.6
+19,1201,31/01/2018,11865,1559,Equities,Superfund (Accumulation),SST0050AU,International Equity,,$1.52,122170,185698.4
+19,1201,31/01/2018,11865,1559,Equities,Superfund (Accumulation),LAZ0025AU,International Equity,,$1.46,75072,109605.12
+19,1201,31/01/2018,11865,1560,Equities,Superfund (Accumulation),EQI0028AU,International Equity,,$2.44,25230,61561.2
+19,1201,31/01/2018,11865,1560,Equities,Superfund (Accumulation),PMC0002AU,International Equity,,$1.99,55088,109625.12
+19,1201,31/01/2018,11865,1562,Fixed Interest,Superfund (Accumulation),MAQ0211AU,Australian Fixed Interest,,$0.99,212720,210592.8
+19,1201,31/01/2018,11865,1567,Fixed Interest,Superfund (Accumulation),CSA0046AU,International Fixed Interest,,$1.03,75249,77506.47
+19,1201,31/01/2018,11865,1567,Fixed Interest,Superfund (Accumulation),ETL0019AU,International Fixed Interest,,$0.98,74890,73392.2
+19,1201,31/01/2018,11865,1567,Fixed Interest,Superfund (Accumulation),OMF0005AU,Australian Fixed Interest,,$1.37,159357,218319.09
+19,1201,31/01/2018,11865,1568,Cash,Superfund (Accumulation),IOF0111AU,Cash,,$1.05,156894,164738.7
+19,1201,31/01/2018,11865,1568,Cash,Superfund (Accumulation),IOF0145AU,Australian Fixed Interest,,$1.07,65799,70404.93
+19,1201,31/01/2018,11865,1569,Alternatives,Superfund (Accumulation),FSF1086AU,Alternative Investments,,$1.24,56296,69807.04
+19,1201,31/01/2018,11865,1569,Alternatives,Superfund (Accumulation),ECL0013AU,Alternative Investments,,$1.18,70667,83387.06
+19,1201,31/01/2018,11865,1569,Alternatives,Superfund (Accumulation),PER0730AU,Alternative Investments,,$0.91,59317,53978.47
+19,1201,31/01/2018,11865,1569,Alternatives,Superfund (Accumulation),GSF0009AU,Alternative Investments,,$0.91,68086,61958.26
+19,1201,31/01/2018,11865,1569,Alternatives,Superfund (Accumulation),GMO0014AU,Alternative Investments,,$1.06,56566,59959.96
+19,1201,31/01/2018,11865,1569,Alternatives,Superfund (Accumulation),ETL0485AU,Alternative Investments,,$0.95,84165,79956.75
+19,1201,31/01/2018,11865,1570,Property,Superfund (Accumulation),WHT0024AU,International Property,,$1.94,35326,68532.44
+19,1201,31/01/2018,11865,1570,Property,Superfund (Accumulation),VAN0018AU,International Property,,$1.04,53100,55224
+19,1201,31/01/2018,11865,1571,Property,Superfund (Accumulation),LAZ0014AU,International Infrastructure,,$1.53,51437,78698.61
+19,1201,31/01/2018,11865,1571,Property,Superfund (Accumulation),MPL0006AU,International Infrastructure,,$1.63,43373,70697.99
+19,1201,31/01/2018,13307,9143,Equities,Superfund (Pension),RGL0002AU,Australian Equity,,$1.75,35754,62569.5
+19,1201,31/01/2018,13307,9143,Equities,Superfund (Pension),PER0439AU,Australian Equity,,$1.50,54321,81481.5
+19,1201,31/01/2018,13307,9143,Equities,Superfund (Pension),RGL0004AU,Australian Equity,,$2.26,30360,68613.6
+19,1201,31/01/2018,13307,9143,Equities,Superfund (Pension),PIM0028AU,Australian Equity,,$1.25,80294,100367.5
+19,1201,31/01/2018,13307,9143,Equities,Superfund (Pension),OPS7755AU,Australian Equity,,$1.23,84174,103534.02
+19,1201,31/01/2018,13307,9145,Equities,Superfund (Pension),MGE0001AU,International Equity,,$2.13,28167,59995.71
+19,1201,31/01/2018,13307,9145,Equities,Superfund (Pension),PLA0100AU,International Equity,,$2.80,29304,82051.2
+19,1201,31/01/2018,13307,9145,Equities,Superfund (Pension),SCH0030AU,International Equity,,$0.90,111846,100661.4
+19,1201,31/01/2018,13307,9145,Equities,Superfund (Pension),SST0050AU,International Equity,,$1.52,66072,100429.44
+19,1201,31/01/2018,13307,9145,Equities,Superfund (Pension),LAZ0025AU,International Equity,,$1.46,41268,60251.28
+19,1201,31/01/2018,13307,9146,Equities,Superfund (Pension),EQI0028AU,International Equity,,$2.44,8968,21881.92
+19,1201,31/01/2018,13307,9146,Equities,Superfund (Pension),PMC0002AU,International Equity,,$1.99,16627,33087.73
+19,1201,31/01/2018,13307,9149,Property,Superfund (Pension),WHT0024AU,International Property,,$1.94,30156,58502.64
+19,1201,31/01/2018,13307,9149,Property,Superfund (Pension),VAN0018AU,International Property,,$1.04,45282,47093.28
+19,1201,31/01/2018,13307,9151,Fixed Interest,Superfund (Pension),CSA0046AU,International Fixed Interest,,$1.03,29579,30466.37
+19,1201,31/01/2018,13307,9151,Fixed Interest,Superfund (Pension),ETL0019AU,International Fixed Interest,,$0.98,30429,29820.42
+19,1201,31/01/2018,13307,9151,Fixed Interest,Superfund (Pension),OMF0005AU,Australian Fixed Interest,,$1.37,63757,87347.09
+19,1201,31/01/2018,13307,9152,Cash,Superfund (Pension),IOF0111AU,Cash,,$1.05,205070,215323.5
+19,1201,31/01/2018,13307,9152,Cash,Superfund (Pension),IOF0145AU,Australian Fixed Interest,,$1.07,86038,92060.66
+19,1201,31/01/2018,13307,9153,Fixed Interest,Superfund (Pension),MAQ0211AU,Australian Fixed Interest,,$0.99,65604,64947.96
+19,1201,31/01/2018,13307,9156,Alternatives,Superfund (Pension),FSF1086AU,Alternative Investments,,$1.24,14189,17594.36
+19,1201,31/01/2018,13307,9156,Alternatives,Superfund (Pension),ECL0013AU,Alternative Investments,,$1.18,17387,20516.66
+19,1201,31/01/2018,13307,9156,Alternatives,Superfund (Pension),PER0730AU,Alternative Investments,,$0.91,16304,14836.64
+19,1201,31/01/2018,13307,9156,Alternatives,Superfund (Pension),GSF0009AU,Alternative Investments,,$0.91,16749,15241.59
+19,1201,31/01/2018,13307,9156,Alternatives,Superfund (Pension),GMO0014AU,Alternative Investments,,$1.06,14545,15417.7
+19,1201,31/01/2018,13307,9156,Alternatives,Superfund (Pension),ETL0485AU,Alternative Investments,,$0.95,21249,20186.55
+19,1201,31/01/2018,13307,9157,Property,Superfund (Pension),LAZ0014AU,International Infrastructure,,$1.53,36143,55298.79
+19,1201,31/01/2018,13307,9157,Property,Superfund (Pension),MPL0006AU,International Infrastructure,,$1.63,33025,53830.75
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),CSA0046AU,International Fixed Interest,,$1.03,20172,20777.16
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),EQI0028AU,International Equity,,$2.44,5289,12905.16
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),IOF0111AU,Cash,,$1.05,249802,262292.1
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),LAZ0014AU,International Infrastructure,,$1.53,23626,36147.78
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),MAQ0211AU,Australian Fixed Interest,,$0.99,288379,285495.21
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),MGE0001AU,International Equity,,$2.13,11989,25536.57
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),PLA0100AU,International Equity,,$2.80,13025,36470
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),RGL0002AU,Australian Equity,,$1.75,15301,26776.75
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),SCH0030AU,International Equity,,$0.90,47747,42972.3
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),VEU,International Equity,GICS Not Applicable,$71.90,3661,263225.9
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),VTS,International Equity,GICS Not Applicable,$179.40,673,120736.2
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),WHT0024AU,International Property,,$1.94,19820,38450.8
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),ETL0019AU,International Fixed Interest,,$0.98,21528,21097.44
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),FSF1086AU,Alternative Investments,,$1.24,43652,54128.48
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),IOF0145AU,Australian Fixed Interest,,$1.07,225061,240815.27
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),PMC0002AU,International Equity,,$1.99,8935,17780.65
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),OMF0005AU,Australian Fixed Interest,,$1.37,48224,66066.88
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),PER0439AU,Australian Equity,,$1.50,22666,33999
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),MAQ0829AU,International Infrastructure,,$1.41,3296,4647.36
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),MAQ0831AU,International Infrastructure,,$1.36,8262,11236.32
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),MAQ0830AU,International Property,,$1.15,4050,4657.5
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),MAQ0832AU,International Property,,$1.29,37832,48803.28
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),ECL0013AU,Alternative Investments,,$1.18,52668,62148.24
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),PER0730AU,Alternative Investments,,$0.91,52165,47470.15
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),GSF0009AU,Alternative Investments,,$0.91,52511,47785.01
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),GMO0014AU,Alternative Investments,,$1.06,46142,48910.52
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),MAQ0288AU,Australian Equity,,$1.68,93759,157515.12
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),RGL0004AU,Australian Equity,,$2.26,13526,30568.76
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),MPL0006AU,International Infrastructure,,$1.63,21519,35075.97
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),SST0050AU,International Equity,,$1.52,27908,42420.16
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),LAZ0025AU,International Equity,,$1.46,17548,25620.08
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),VAE,International Equity,GICS Not Applicable,$67.95,836,56806.2
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),ETL0485AU,Alternative Investments,,$0.95,70114,66608.3
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),PIM0028AU,Australian Equity,,$1.25,32149,40186.25
+19,1201,31/01/2018,11859,14460,Conservative,Superfund (Accumulation),OPS7755AU,Australian Equity,,$1.23,33694,41443.62
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),PER0116AU,Australian Equity,,$2.03,43572,88451.16
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),RHC,Australian Equity,Health Care Equipment & Services,$68.35,223,15242.05
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),RMD,Australian Equity,Health Care Equipment & Services,$12.47,3073,38320.31
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),WBC,Australian Equity,Banks,$30.96,1137,35201.52
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),WBCPC,Australian Fixed Interest,Banks,$102.52,312,31986.24
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),CNI,Australian Property,Diversified Financials,$1.41,96734,136394.94
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),CRE0014AU,Australian Fixed Interest,,$1.05,71233,74794.65
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),EHE,Australian Equity,Health Care Equipment & Services,$3.41,5262,17943.42
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),CMA,Australian Property,Real Estate,$2.37,19152,45390.24
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),AUG0006AU,International Equity,,$1.18,69716,82264.88
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),BBOZ,Australian Equity,GICS Not Applicable,$15.16,1339,20299.24
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),BBUS,Alternative Investments,GICS Not Applicable,$4.75,8145,38688.75
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),JHC,Australian Equity,Health Care Equipment & Services,$1.98,15257,30208.86
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),ANZPG,Australian Fixed Interest,Banks,$107.40,604,64869.6
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),RNE,Australian Equity,Utilities,$0.02,15451,309.02
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),MOE,Australian Equity,Diversified Financials,$6.30,10008,63050.4
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),PPCHB,Australian Fixed Interest,Real Estate,$103.61,150,15541.5
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),CRR_2022,Australian Property,Real Estate,$2.74,18334,50235.16
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),AU3FN0039459,Australian Fixed Interest,,$1.02,69000,70380
+78,19077,31/01/2018,19103,19105,Tailored,Superfund (Pension),SLT1639AU,Alternative Investments,,$1.00,206435,206435
+78,19077,31/01/2018,19103,19106,Property,Superfund (Pension),CPG0001AU,Australian Property,,$0.35,269136,94197.6
+78,19077,31/01/2018,19103,19106,Property,Superfund (Pension),HTH0007AU,Australian Property,,$1.17,50008,58509.36
+78,34601,31/01/2018,19204,19206,Balanced,Superfund (Pension),CNI,Australian Property,Diversified Financials,$1.40,55017,77023.8
+78,34601,31/01/2018,19204,19206,Balanced,Superfund (Pension),CPG0001AU,Australian Property,,$0.35,218175,76361.25
+78,34601,31/01/2018,19204,19206,Balanced,Superfund (Pension),PCL0015AU,Australian Equity,,$1.16,318042,368928.72
+78,34601,31/01/2018,19204,19206,Balanced,Superfund (Pension),BBOZ,Australian Equity,GICS Not Applicable,$15.16,1778,26954.48
+78,34601,31/01/2018,19204,19206,Balanced,Superfund (Pension),BBUS,Alternative Investments,GICS Not Applicable,$4.75,8379,39800.25
+78,34601,31/01/2018,19204,19206,Balanced,Superfund (Pension),MA1,Australian Equity,GICS Not Applicable,$0.85,45000,38250
+78,34601,31/01/2018,19204,19206,Balanced,Superfund (Pension),MON0001AU,Alternative Investments,,$1.46,7547,11018.62
+78,34601,31/01/2018,19204,19206,Balanced,Superfund (Pension),MOE,Australian Equity,Diversified Financials,$6.30,4735,29830.5
+78,34601,31/01/2018,19204,19206,Balanced,Superfund (Pension),SLT1639AU,Alternative Investments,,$1.00,123389,123389
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),AMC,Australian Equity,Materials,$14.56,546,7949.76
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),ANZ,Australian Equity,Banks,$28.58,250,7145
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),FXL,Australian Equity,Diversified Financials,$1.81,5713,10340.53
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),LLC,Australian Equity,Real Estate,$15.84,366,5797.44
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),NAB,Australian Equity,Banks,$29.13,380,11069.4
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),RHC,Australian Equity,Health Care Equipment & Services,$68.35,97,6629.95
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),RIO,Australian Equity,Materials,$76.85,214,16445.9
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),RMD,Australian Equity,Health Care Equipment & Services,$12.47,1649,20563.03
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),WBC,Australian Equity,Banks,$30.96,360,11145.6
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),CNI,Australian Property,Diversified Financials,$1.41,25859,36461.19
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),CPG0001AU,Australian Property,,$0.35,98660,34531
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),NXT,Australian Equity,Software & Services,$5.70,2455,13993.5
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),EHE,Australian Equity,Health Care Equipment & Services,$3.41,2597,8855.77
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),BBOZ,Australian Equity,GICS Not Applicable,$15.16,949,14386.84
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),BBUS,Alternative Investments,GICS Not Applicable,$4.75,4578,21745.5
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),JHC,Australian Equity,Health Care Equipment & Services,$1.98,4613,9133.74
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),MA1,Australian Equity,GICS Not Applicable,$0.85,24005,20404.25
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),MON0001AU,Alternative Investments,,$1.46,4429,6466.34
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),MOE,Australian Equity,Diversified Financials,$6.30,4256,26812.8
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),AU3FN0039459,Australian Fixed Interest,,$1.02,10001,10201.02
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),SUNPG,Australian Fixed Interest,Insurance,$103.68,125,12960
+78,34601,31/01/2018,19213,19215,Growth,Superfund (Accumulation),SLT1639AU,Alternative Investments,,$1.00,63739,63739
+78,45714,31/01/2018,19256,19258,Growth,Superfund (Accumulation),CNI,Australian Property,Diversified Financials,$1.41,40820,57556.2
+78,45714,31/01/2018,19256,19258,Growth,Superfund (Accumulation),CPG0001AU,Australian Property,,$0.35,154566,54098.1
+78,45714,31/01/2018,19256,19258,Growth,Superfund (Accumulation),PCL0015AU,Australian Equity,,$1.16,268120,311019.2
+78,45714,31/01/2018,19256,19258,Growth,Superfund (Accumulation),BBOZ,Australian Equity,GICS Not Applicable,$15.16,1468,22254.88
+78,45714,31/01/2018,19256,19258,Growth,Superfund (Accumulation),BBUS,Alternative Investments,GICS Not Applicable,$4.75,6937,32950.75
+78,45714,31/01/2018,19256,19258,Growth,Superfund (Accumulation),MA1,Australian Equity,GICS Not Applicable,$0.85,36012,30610.2
+78,45714,31/01/2018,19256,19258,Growth,Superfund (Accumulation),MON0001AU,Alternative Investments,,$1.46,6846,9995.16
+78,45714,31/01/2018,19256,19258,Growth,Superfund (Accumulation),MOE,Australian Equity,Diversified Financials,$6.30,3152,19857.6
+78,45714,31/01/2018,19256,19258,Growth,Superfund (Accumulation),SLT1639AU,Alternative Investments,,$1.00,87228,87228
+78,25631,31/01/2018,19474,19476,Balanced,Superfund (Pension),CNI,Australian Property,Diversified Financials,$1.40,69461,97245.4
+78,25631,31/01/2018,19474,19476,Balanced,Superfund (Pension),CPG0001AU,Australian Property,,$0.35,324259,113490.65
+78,25631,31/01/2018,19474,19476,Balanced,Superfund (Pension),PCL0015AU,Australian Equity,,$1.16,407577,472789.32
+78,25631,31/01/2018,19474,19476,Balanced,Superfund (Pension),BBOZ,Australian Equity,GICS Not Applicable,$15.16,2329,35307.64
+78,25631,31/01/2018,19474,19476,Balanced,Superfund (Pension),BBUS,Alternative Investments,GICS Not Applicable,$4.75,10971,52112.25
+78,25631,31/01/2018,19474,19476,Balanced,Superfund (Pension),MA1,Australian Equity,GICS Not Applicable,$0.85,57011,48459.35
+78,25631,31/01/2018,19474,19476,Balanced,Superfund (Pension),MON0001AU,Alternative Investments,,$1.46,9909,14467.14
+78,25631,31/01/2018,19474,19476,Balanced,Superfund (Pension),MOE,Australian Equity,Diversified Financials,$6.30,5991,37743.3
+78,25631,31/01/2018,19474,19476,Balanced,Superfund (Pension),SLT1639AU,Alternative Investments,,$1.00,149006,149006
+78,34601,31/01/2018,19653,19655,Balanced,Joint,CNI,Australian Property,Diversified Financials,$1.41,8644,12188.04
+78,34601,31/01/2018,19653,19655,Balanced,Joint,CPG0001AU,Australian Property,,$0.35,101108,35387.8
+78,34601,31/01/2018,19653,19655,Balanced,Joint,PCL0015AU,Australian Equity,,$1.16,73749,85548.84
+78,34601,31/01/2018,19653,19655,Balanced,Joint,BBOZ,Australian Equity,GICS Not Applicable,$15.16,545,8262.2
+78,34601,31/01/2018,19653,19655,Balanced,Joint,BBUS,Alternative Investments,GICS Not Applicable,$4.75,2549,12107.75
+78,34601,31/01/2018,19653,19655,Balanced,Joint,MA1,Australian Equity,GICS Not Applicable,$0.85,4106,3490.1
+78,34601,31/01/2018,19653,19655,Balanced,Joint,MOE,Australian Equity,Diversified Financials,$6.30,604,3805.2
+78,34601,31/01/2018,19653,19655,Balanced,Joint,SLT1639AU,Alternative Investments,,$1.00,13715,13715
+78,34601,31/01/2018,19653,19657,Property,Joint,HTH0007AU,Australian Property,,$1.17,25002,29252.34
+78,19077,31/01/2018,19993,19995,Balanced,Superfund (Pension),CNI,Australian Property,Diversified Financials,$1.41,32078,45229.98
+78,19077,31/01/2018,19993,19995,Balanced,Superfund (Pension),CPG0001AU,Australian Property,,$0.35,140414,49144.9
+78,19077,31/01/2018,19993,19995,Balanced,Superfund (Pension),PCL0015AU,Australian Equity,,$1.16,187575,217587
+78,19077,31/01/2018,19993,19995,Balanced,Superfund (Pension),BBOZ,Australian Equity,GICS Not Applicable,$15.16,1122,17009.52
+78,19077,31/01/2018,19993,19995,Balanced,Superfund (Pension),BBUS,Alternative Investments,GICS Not Applicable,$4.75,5294,25146.5
+78,19077,31/01/2018,19993,19995,Balanced,Superfund (Pension),MA1,Australian Equity,GICS Not Applicable,$0.85,28001,23800.85
+78,19077,31/01/2018,19993,19995,Balanced,Superfund (Pension),MON0001AU,Alternative Investments,,$1.46,4537,6624.02
+78,19077,31/01/2018,19993,19995,Balanced,Superfund (Pension),MOE,Australian Equity,Diversified Financials,$6.30,2406,15157.8
+78,19077,31/01/2018,19993,19995,Balanced,Superfund (Pension),SLT1639AU,Alternative Investments,,$1.00,59837,59837
+78,25631,31/01/2018,20051,20053,Balanced,Superfund (Pension),CNI,Australian Property,Diversified Financials,$1.41,25437,35866.17
+78,25631,31/01/2018,20051,20053,Balanced,Superfund (Pension),CPG0001AU,Australian Property,,$0.35,260900,91315
+78,25631,31/01/2018,20051,20053,Balanced,Superfund (Pension),PCL0015AU,Australian Equity,,$1.16,183177,212485.32
+78,25631,31/01/2018,20051,20053,Balanced,Superfund (Pension),BBOZ,Australian Equity,GICS Not Applicable,$15.16,1223,18540.68
+78,25631,31/01/2018,20051,20053,Balanced,Superfund (Pension),BBUS,Alternative Investments,GICS Not Applicable,$4.75,5572,26467
+78,25631,31/01/2018,20051,20053,Balanced,Superfund (Pension),MA1,Australian Equity,GICS Not Applicable,$0.85,25105,21339.25
+78,25631,31/01/2018,20051,20053,Balanced,Superfund (Pension),MOE,Australian Equity,Diversified Financials,$6.30,2567,16172.1
+78,25631,31/01/2018,20051,20053,Balanced,Superfund (Pension),SLT1639AU,Alternative Investments,,$1.00,54682,54682
+78,19078,31/01/2018,20378,20380,Growth,Individual,CNI,Australian Property,Diversified Financials,$1.40,1815,2541
+78,19078,31/01/2018,20378,20380,Growth,Individual,CPG0001AU,Australian Property,,$0.35,13482,4718.7
+78,19078,31/01/2018,20378,20380,Growth,Individual,PCL0015AU,Australian Equity,,$1.16,21776,25260.16
+78,19078,31/01/2018,20378,20380,Growth,Individual,BBOZ,Australian Equity,GICS Not Applicable,$15.16,154,2334.64
+78,19078,31/01/2018,20378,20380,Growth,Individual,BBUS,Alternative Investments,GICS Not Applicable,$4.75,457,2170.75
+78,19078,31/01/2018,20378,20380,Growth,Individual,MA1,Australian Equity,GICS Not Applicable,$0.85,3002,2551.7
+78,19078,31/01/2018,20378,20380,Growth,Individual,MOE,Australian Equity,Diversified Financials,$6.30,475,2992.5
+78,19078,31/01/2018,20378,20380,Growth,Individual,SLT1639AU,Alternative Investments,,$1.00,3824,3824
+78,19078,31/01/2018,20392,20396,Property,Superfund (Pension),HTH0007AU,Australian Property,,$1.17,100007,117008.19
+78,19078,31/01/2018,20392,20396,Property,Superfund (Pension),HTH0006AU,Australian Property,,$0.79,250004,197503.16
+19,45605,31/01/2018,24417,24419,Balanced,Superfund (Accumulation),MAQ0830AU,International Property,,$1.15,356,409.4
+19,45605,31/01/2018,24417,24419,Balanced,Superfund (Accumulation),MAQ0832AU,International Property,,$1.29,4117,5310.93
+19,45605,31/01/2018,24417,24419,Balanced,Superfund (Accumulation),ECL0013AU,Alternative Investments,,$1.18,6355,7498.9
+19,45605,31/01/2018,24417,24419,Balanced,Superfund (Accumulation),PER0730AU,Alternative Investments,,$0.91,5903,5371.73
+19,45605,31/01/2018,24417,24419,Balanced,Superfund (Accumulation),GSF0009AU,Alternative Investments,,$0.91,6158,5603.78
+19,45605,31/01/2018,24417,24419,Balanced,Superfund (Accumulation),GMO0014AU,Alternative Investments,,$1.06,5343,5663.58
+19,45605,31/01/2018,24417,24419,Balanced,Superfund (Accumulation),MAQ0288AU,Australian Equity,,$1.68,10797,18138.96
+19,45605,31/01/2018,24417,24419,Balanced,Superfund (Accumulation),RGL0004AU,Australian Equity,,$2.26,1604,3625.04
+19,45605,31/01/2018,24417,24419,Balanced,Superfund (Accumulation),MPL0006AU,International Infrastructure,,$1.63,2438,3973.94
+19,45605,31/01/2018,24417,24419,Balanced,Superfund (Accumulation),SST0050AU,International Equity,,$1.52,3365,5114.8
+19,45605,31/01/2018,24417,24419,Balanced,Superfund (Accumulation),LAZ0025AU,International Equity,,$1.46,2076,3030.96
+19,45605,31/01/2018,24417,24419,Balanced,Superfund (Accumulation),VAE,International Equity,GICS Not Applicable,$67.95,113,7678.35
+19,45605,31/01/2018,24417,24419,Balanced,Superfund (Accumulation),ETL0485AU,Alternative Investments,,$0.95,7321,6954.95
+19,45605,31/01/2018,24417,24419,Balanced,Superfund (Accumulation),PIM0028AU,Australian Equity,,$1.25,2901,3626.25
+19,45605,31/01/2018,24417,24419,Balanced,Superfund (Accumulation),OPS7755AU,Australian Equity,,$1.23,3176,3906.48
+78,19077,31/01/2018,25552,25554,Income,Trust,AMC,Australian Equity,Materials,$14.56,318,4630.08
+78,19077,31/01/2018,25552,25554,Income,Trust,ANZ,Australian Equity,Banks,$28.58,149,4258.42
+78,19077,31/01/2018,25552,25554,Income,Trust,FXL,Australian Equity,Diversified Financials,$1.81,1561,2825.41
+78,19077,31/01/2018,25552,25554,Income,Trust,LLC,Australian Equity,Real Estate,$15.84,265,4197.6
+78,19077,31/01/2018,25552,25554,Income,Trust,NAB,Australian Equity,Banks,$29.13,100,2913
+78,19077,31/01/2018,25552,25554,Income,Trust,RHC,Australian Equity,Health Care Equipment & Services,$68.35,65,4442.75
+78,19077,31/01/2018,25552,25554,Income,Trust,RMD,Australian Equity,Health Care Equipment & Services,$12.47,467,5823.49
+78,19077,31/01/2018,25552,25554,Income,Trust,WBC,Australian Equity,Banks,$30.96,75,2322
+78,19077,31/01/2018,25552,25554,Income,Trust,WBCPC,Australian Fixed Interest,Banks,$102.52,68,6971.36
+78,19077,31/01/2018,25552,25554,Income,Trust,CNI,Australian Property,Diversified Financials,$1.41,17711,24972.51
+78,19077,31/01/2018,25552,25554,Income,Trust,CPG0001AU,Australian Property,,$0.35,62604,21911.4
+78,19077,31/01/2018,25552,25554,Income,Trust,CRE0014AU,Australian Fixed Interest,,$1.05,9434,9905.7
+78,19077,31/01/2018,25552,25554,Income,Trust,NXT,Australian Equity,Software & Services,$5.70,1354,7717.8
+78,19077,31/01/2018,25552,25554,Income,Trust,EHE,Australian Equity,Health Care Equipment & Services,$3.41,871,2970.11
+78,19077,31/01/2018,25552,25554,Income,Trust,MEB11,Cash,,$1.00,256131,256131
+78,19077,31/01/2018,25552,25554,Income,Trust,BBOZ,Australian Equity,GICS Not Applicable,$15.16,75,1137
+78,19077,31/01/2018,25552,25554,Income,Trust,BBUS,Alternative Investments,GICS Not Applicable,$4.75,758,3600.5
+78,19077,31/01/2018,25552,25554,Income,Trust,JHC,Australian Equity,Health Care Equipment & Services,$1.98,2519,4987.62
+78,19077,31/01/2018,25552,25554,Income,Trust,MA1,Australian Equity,GICS Not Applicable,$0.85,14614,12421.9
+78,19077,31/01/2018,25552,25554,Income,Trust,MON0001AU,Alternative Investments,,$1.46,2310,3372.6
+78,19077,31/01/2018,25552,25554,Income,Trust,ANZPG,Australian Fixed Interest,Banks,$107.40,57,6121.8
+78,19077,31/01/2018,25552,25554,Income,Trust,MOE,Australian Equity,Diversified Financials,$6.30,2983,18792.9
+78,19077,31/01/2018,25552,25554,Income,Trust,CRR_2022,Australian Property,Real Estate,$2.74,1679,4600.46
+78,19077,31/01/2018,25552,25554,Income,Trust,ANZPH,Australian Fixed Interest,Banks,$103.62,71,7357.02
+78,19077,31/01/2018,25552,25554,Income,Trust,AU3FN0039459,Australian Fixed Interest,,$1.02,25004,25504.08
+78,19077,31/01/2018,25552,25554,Income,Trust,SUNPG,Australian Fixed Interest,Insurance,$103.68,70,7257.6
+78,19077,31/01/2018,25552,25554,Income,Trust,BENPG,Australian Fixed Interest,Banks,$103.00,70,7210
+78,19077,31/01/2018,25552,25554,Income,Trust,BOQPE,Australian Fixed Interest,Banks,$101.86,175,17825.5
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),WBCPC,Australian Fixed Interest,Banks,$102.52,171,17530.92
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),CNI,Australian Property,Diversified Financials,$1.41,38775,54672.75
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),CPG0001AU,Australian Property,,$0.35,140008,49002.8
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),PCL0015AU,Australian Equity,,$1.16,74879,86859.64
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),CRE0014AU,Australian Fixed Interest,,$1.05,52599,55228.95
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),MA1,Australian Equity,GICS Not Applicable,$0.85,22229,18894.65
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),MON0001AU,Alternative Investments,,$1.46,5403,7888.38
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),ANZPG,Australian Fixed Interest,Banks,$107.40,337,36193.8
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),MOE,Australian Equity,Diversified Financials,$6.30,3703,23328.9
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),PPCHB,Australian Fixed Interest,Real Estate,$103.61,184,19064.24
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),CRR_2022,Australian Property,Real Estate,$2.74,8010,21947.4
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),ANZPH,Australian Fixed Interest,Banks,$103.62,176,18237.12
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),SUNPG,Australian Fixed Interest,Insurance,$103.68,311,32244.48
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),SLT1639AU,Alternative Investments,,$1.00,87266,87266
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),BENPG,Australian Fixed Interest,Banks,$103.00,170,17510
+78,19077,31/01/2018,26225,26227,Conservative,Superfund (Accumulation),BOQPE,Australian Fixed Interest,Banks,$101.86,120,12223.2
+78,19077,31/01/2018,26225,26228,Tailored,Superfund (Accumulation),MOE,Australian Equity,Diversified Financials,$6.30,7665,48289.5
+78,19077,31/01/2018,25552,30676,Property,Trust,ABA0005AU,Australian Property,,$0.72,50821,36591.12
+78,19077,31/01/2018,25552,30676,Property,Trust,KIN0001AU,Australian Property,,$0.06,59401,3564.06
+78,19077,31/01/2018,22747,30900,Conservative,Joint,WBCPC,Australian Fixed Interest,Banks,$102.52,212,21734.24
+78,19077,31/01/2018,22747,30900,Conservative,Joint,CNI,Australian Property,Diversified Financials,$1.41,45176,63698.16
+78,19077,31/01/2018,22747,30900,Conservative,Joint,CPG0001AU,Australian Property,,$0.35,180043,63015.05
+78,19077,31/01/2018,22747,30900,Conservative,Joint,PCL0015AU,Australian Equity,,$1.16,185963,215717.08
+78,19077,31/01/2018,22747,30900,Conservative,Joint,BBOZ,Australian Equity,GICS Not Applicable,$15.16,1301,19723.16
+78,19077,31/01/2018,22747,30900,Conservative,Joint,BBUS,Alternative Investments,GICS Not Applicable,$4.75,5814,27616.5
+78,19077,31/01/2018,22747,30900,Conservative,Joint,MA1,Australian Equity,GICS Not Applicable,$0.85,28004,23803.4
+78,19077,31/01/2018,22747,30900,Conservative,Joint,MON0001AU,Alternative Investments,,$1.46,4853,7085.38
+78,19077,31/01/2018,22747,30900,Conservative,Joint,MOE,Australian Equity,Diversified Financials,$6.30,3655,23026.5
+78,19077,31/01/2018,22747,30900,Conservative,Joint,PPCHB,Australian Fixed Interest,Real Estate,$103.61,100,10361
+78,19077,31/01/2018,22747,30900,Conservative,Joint,ANZPH,Australian Fixed Interest,Banks,$103.62,156,16164.72
+78,19077,31/01/2018,22747,30900,Conservative,Joint,AU3FN0039459,Australian Fixed Interest,,$1.02,10000,10200
+78,19077,31/01/2018,22747,30900,Conservative,Joint,SUNPG,Australian Fixed Interest,Insurance,$103.68,209,21669.12
+78,19077,31/01/2018,22747,30900,Conservative,Joint,SLT1639AU,Alternative Investments,,$1.00,105035,105035
+78,19077,31/01/2018,22747,30900,Conservative,Joint,BENPG,Australian Fixed Interest,Banks,$103.00,100,10300
+78,45714,31/01/2018,31143,31145,Conservative,Joint,VAP,Australian Property,GICS Not Applicable,$80.60,263,21197.8
+78,45714,31/01/2018,31143,31145,Conservative,Joint,CNI,Australian Property,Diversified Financials,$1.41,41601,58657.41
+78,45714,31/01/2018,31143,31145,Conservative,Joint,PCL0015AU,Australian Equity,,$1.16,59854,69430.64
+78,45714,31/01/2018,31143,31145,Conservative,Joint,MVA,Australian Property,GICS Not Applicable,$19.75,1009,19927.75
+78,45714,31/01/2018,31143,31145,Conservative,Joint,CRE0014AU,Australian Fixed Interest,,$1.05,75503,79278.15
+78,45714,31/01/2018,31143,31145,Conservative,Joint,MEB11,Cash,,$1.00,72849,72849
+78,45714,31/01/2018,31143,31145,Conservative,Joint,MA1,Australian Equity,GICS Not Applicable,$0.85,13621,11577.85
+78,45714,31/01/2018,31143,31145,Conservative,Joint,MON0001AU,Alternative Investments,,$1.46,20750,30295
+78,45714,31/01/2018,31143,31145,Conservative,Joint,ANZPG,Australian Fixed Interest,Banks,$107.40,447,48007.8
+78,45714,31/01/2018,31143,31145,Conservative,Joint,MOE,Australian Equity,Diversified Financials,$6.30,4896,30844.8
+78,45714,31/01/2018,31143,31145,Conservative,Joint,CRR_2022,Australian Property,Real Estate,$2.74,10949,30000.26
+78,45714,31/01/2018,31143,31145,Conservative,Joint,ANZPH,Australian Fixed Interest,Banks,$103.62,245,25386.9
+78,45714,31/01/2018,31143,31145,Conservative,Joint,AU3FN0039459,Australian Fixed Interest,,$1.02,37004,37744.08
+78,45714,31/01/2018,31143,31145,Conservative,Joint,SUNPG,Australian Fixed Interest,Insurance,$103.68,393,40746.24
+78,45714,31/01/2018,31143,31145,Conservative,Joint,SLT1639AU,Alternative Investments,,$1.00,120659,120659
+78,45714,31/01/2018,31143,31145,Conservative,Joint,BENPG,Australian Fixed Interest,Banks,$103.00,392,40376
+78,45714,31/01/2018,31143,31145,Conservative,Joint,BOQPE,Australian Fixed Interest,Banks,$101.86,250,25465

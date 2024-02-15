@@ -20,7 +20,7 @@ def chatbot(user_input):
     :param user_input: Input given by the user (a string).
     :return: Response from OpenAI API.
     """
-    system_bias = "You're a informative AI chatbot that specialises in data science, visualisation and analytics."
+    system_bias = "You're an informative AI chatbot that specialises in data science, visualisation and analytics."
     # Message from user input given to the API
     messages = [
         {"role": "system", "content": system_bias},
